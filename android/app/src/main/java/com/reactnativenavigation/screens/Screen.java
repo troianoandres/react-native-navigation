@@ -61,7 +61,7 @@ public abstract class Screen extends RelativeLayout implements Subscriber {
         this.screenParams = screenParams;
         styleParams = screenParams.styleParams;
         this.leftButtonOnClickListener = leftButtonOnClickListener;
-        screenAnimator = new ScreenAnimator(this);
+        screenAnimator = ScreenAnimatorFactory.create(this, screenParams);
         createViews();
         EventBus.instance.register(this);
         sharedElements = new SharedElements();

@@ -50,9 +50,18 @@ public class ScreenParamsParser extends Parser {
         result.tabIcon = new TabIconParser(params).parse();
 
         result.animateScreenTransitions = new AnimationParser(params).parse();
+
+        if (result.animateScreenTransitions) {
+            result.screenTransitionAnimationType = getScreenTransitionAnimationType(params);
+        }
+
         result.sharedElementsTransitions = getSharedElementsTransitions(params);
 
         return result;
+    }
+
+    private static String getScreenTransitionAnimationType (Bundle params) {
+        return params.getString("animationType", "slide-left");
     }
 
     private static List<String> getSharedElementsTransitions(Bundle params) {
