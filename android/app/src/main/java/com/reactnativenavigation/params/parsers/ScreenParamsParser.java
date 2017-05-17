@@ -61,7 +61,7 @@ public class ScreenParamsParser extends Parser {
     }
 
     private static String getScreenTransitionAnimationType (Bundle params) {
-        return params.getString("animationType", "slide-left");
+        return params.getString("animationType", "slide-up");
     }
 
     private static List<String> getSharedElementsTransitions(Bundle params) {

@@ -8,7 +8,7 @@ class ScreenAnimatorFactory {
         ScreenAnimator screenAnimator;
         String animationType = screenParams.screenTransitionAnimationType;
 
-        if (animationType == "slide-left") {
+        if (animationType.equals("slide-left")) {
             screenAnimator = new SlideLeftScreenAnimator(screen);
         } else {
             screenAnimator = new SlideUpScreenAnimator(screen);
